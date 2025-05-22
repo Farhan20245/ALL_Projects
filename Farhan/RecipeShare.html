@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Sharing App</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffcc00;
+        }
+        h1 {
+            margin: 0;
+        }
+        .recipe-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .recipe-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .recipe-card {
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 20px);
+        }
+        .recipe-card img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        .button {
+            background-color: #ffcc00;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Recipe Sharing App</h1>
+</header>
+
+<div class="recipe-form">
+    <h2>Share Your Recipe</h2>
+    <form id="recipeForm">
+        <label for="title">Dish Title:</label><br>
+        <input type="text" id="title" required><br><br>
+        
+        <label for="image">Dish Image URL:</label><br>
+        <input type="text" id="image" required><br><br>
+        
+        <label for="category">Dish Category:</label><br>
+        <input type="text" id="category" required><br><br>
+        
+        <label for="ingredients">Ingredients:</label><br>
+        <textarea id="ingredients" required></textarea><br><br>
+        
+        <label for="instructions">Cooking Instructions:</label><br>
+        <textarea id="instructions" required></textarea><br><br>
+        
+        <label for="video">YouTube Video Link:</label><br>
+        <input type="text" id="video" required><br><br>
+        
+        <button type="button" class="button" onclick="addRecipe()">Finalize Add Recipe</button>
+    </form>
+</div>
+
+<div class="recipe-list" id="recipeList">
+    <h2>Uploaded Dishes</h2>
+</div>
+
+<script>
+    function addRecipe() {
+        const title = document.getElementById('title').value;
+        const image = document.getElementById('image').value;
+        const category = document.getElementById('category').value;
+        const ingredients = document.getElementById('ingredients').value;
+        const instructions = document.getElementById('instructions').value;
+        const video = document.getElementById('video').value;
+
+        // Create a new recipe card
+        const recipeCard = document.createElement('div');
+        recipeCard.className = 'recipe-card';
+        recipeCard.innerHTML = `
+            <h3>${title}</h3>
+            <img src="${image}" alt="${title}">
+            <p><strong>Category:</strong> ${category}</p>
+            <p><strong>Ingredients:</strong> ${ingredients}</p>
+            <p><strong>Instructions:</strong> ${instructions}</p>
+            <a href="${video}" target="_blank">Watch Cooking Video</a>
+        `;
+
+        // Append the new recipe card to the recipe list
+        document.getElementById('recipeList').appendChild(recipeCard);
+
+        // Clear the form
+        document.getElementById('recipeForm').reset();
+
+        // Redirect to OurFlavors page (you can create a separate page for this)
+        window.location.href = '#OurFlavors';
+    }
+</script>
+
+</body>
+</html>
