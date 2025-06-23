@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(213, 27%, 24%);
+  --secondary-foreground: hsl(211, 100%, 99%);
+  --accent: hsl(198, 100%, 44%);
+  --accent-foreground: hsl(211, 100%, 99%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --success: hsl(142, 76%, 36%);
+  --success-foreground: hsl(0, 0%, 100%);
+  --warning: hsl(38, 92%, 50%);
+  --warning-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(207, 90%, 54%) 0%, hsl(213, 27%, 24%) 100%);
+  }
+
+  .job-card {
+    @apply bg-white dark:bg-card rounded-lg shadow-sm border hover:shadow-md transition-shadow p-6;
+  }
+
+  .search-input {
+    @apply w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-background text-foreground;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-lg hover:opacity-90 transition-all font-medium;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-6 py-3 rounded-lg hover:opacity-90 transition-all font-medium;
+  }
+
+  .skill-tag {
+    @apply px-3 py-1 bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 rounded-full text-sm;
+  }
+
+  .status-applied {
+    @apply bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-300;
+  }
+
+  .status-viewed {
+    @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-300;
+  }
+
+  .status-shortlisted {
+    @apply bg-purple-100 text-purple-800 dark:bg-purple-900/20 dark:text-purple-300;
+  }
+
+  .status-interview {
+    @apply bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-300;
+  }
+
+  .status-rejected {
+    @apply bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-300;
+  }
+
+  .status-hired {
+    @apply bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

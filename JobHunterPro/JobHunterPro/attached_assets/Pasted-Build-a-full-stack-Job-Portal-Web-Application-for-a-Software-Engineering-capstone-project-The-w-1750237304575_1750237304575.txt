@@ -1,0 +1,71 @@
+Build a full-stack **Job Portal Web Application** for a Software Engineering capstone project. The web app should be inspired by BDJobs and LinkedIn, combining essential job board functionality with modern features and proper role-based access. All major components must be fully functional and user-friendly.
+
+🧑‍💻 USER ROLES:
+- Job Seeker
+- Employer
+- Admin
+
+🔐 AUTHENTICATION & ACCESS:
+- Role-based registration with selection (Job Seeker or Employer)
+- Working **Sign Up and Login buttons**
+- Role-based dashboard redirection after login
+- Email verification and password reset
+- Secure session management (JWT or cookie-based)
+
+🧰 EMPLOYER FEATURES:
+- Create, edit, delete job posts
+- Required job fields: title, description, salary, job type, deadline, location, category
+- Anonymous posting toggle (hide company name initially)
+- View all applicants for each job
+- Schedule interviews using a simple calendar UI
+
+🔎 JOB SEEKER FEATURES:
+- View all jobs and apply directly from job listing
+- Fully functional **search bar** (case-insensitive and partial match)
+- Filters: job type, salary, experience level, category
+- Pagination and sorting (e.g., latest jobs, highest salary)
+- Save jobs to wishlist/bookmarks
+- Resume upload (PDF/DOC) or build via a **dynamic resume builder**
+- Portfolio showcase (GitHub links, images, project descriptions)
+
+📨 APPLICATION SYSTEM:
+- Apply to jobs with a button (confirm success)
+- Track application status (Applied, Viewed, Shortlisted, Rejected)
+- Employers can mark status of each applicant
+- Confirmation message after submitting an application
+
+🛡 ADMIN PANEL:
+- Admin-only login
+- Dashboard showing stats (total users, jobs, applications)
+- Approve/reject job posts or users
+- Manage fake job reports
+
+💡 ADVANCED FEATURES:
+- AI-based job matching & resume feedback (basic keyword matching using NLP or OpenAI API)
+- Skill test system (MCQ quiz or coding test for applicants)
+- Real-time chat between Employer and Job Seeker (optional: basic socket or simulated chat)
+- WhatsApp/Telegram-style job alert (simulated with console/email)
+- English ↔ Bangla language switcher
+- Dark mode and font scaling for accessibility
+
+🛠️ TECHNOLOGY STACK:
+- Frontend: React.js + Tailwind CSS (or Bootstrap)
+- Backend: Django (preferred) or Node.js + Express
+- Database: PostgreSQL or MongoDB
+- Authentication: JWT (or session-based)
+- State management: Context API or Redux (optional)
+
+📁 OUTPUT REQUIREMENTS:
+- Proper folder structure with separation of frontend and backend
+- RESTful API routes
+- Database models: User, Job, Application, Resume, Portfolio, Message
+- Sample pages: Home, Login, Register, Dashboard, Job Detail, Admin Panel
+- Working routing, protected routes, logout
+- README file with clear run instructions
+
+⚠️ IMPORTANT:
+- **Ensure "Sign Up" and "Apply" buttons are functional**
+- **Fix search so it returns filtered results properly**
+- Do not leave placeholder components; implement at least basic working versions of each feature
+- Interface must be responsive and mobile-friendly
+

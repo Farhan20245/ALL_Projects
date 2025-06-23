@@ -1,0 +1,13 @@
+@echo off
+echo Starting Job Portal Application...
+if not exist node_modules (
+    echo Installing dependencies...
+    npm install
+)
+if not exist .env (
+    echo Creating .env file...
+    copy .env.example .env
+)
+echo Starting development server...
+npm run dev
+pause
